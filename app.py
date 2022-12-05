@@ -9,7 +9,7 @@ password = os.environ.get('password')
 
 st.header("Create Database/Schema/Table", anchor=None)
 
-db_conf = st.radio("Do you want to create Database",('Yes', 'No'))
+db_conf = st.radio("Do you want to create Database",('None','Yes', 'No'))
 
 if db_conf == 'Yes':
     db_name = st.text_input('Enter Database Name')
@@ -18,7 +18,7 @@ if db_conf == 'Yes':
         with snowflake.connector.connect(
     user = user,
     password = password,
-    account ='VK83964.ap-southeast-1',
+    account='VK83964.ap-southeast-1',
     warehouse='DNAHACK') as con:
             
             try:
