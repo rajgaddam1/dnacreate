@@ -24,12 +24,13 @@ if db_conf == 'Yes':
             try:
                 cur = con.cursor()
                 cur.execute(sql_cmd)
+                st.write('Database has been created')
             except Exception as e:
                 print(e)
+                st.write('An error has occured please check logs')
             finally:
                 cur.close()
         con.close()
-        st.write('Database has been created')
         db_conf = st.radio("Do you want to create Schema",('Yes', 'No'))
         
     
