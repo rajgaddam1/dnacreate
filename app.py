@@ -4,6 +4,9 @@ import snowflake.connector
 import warnings 
 warnings.filterwarnings("ignore")
 
+user = os.environ.get('user')
+password = os.environ.get('password')
+
 st.header("Create Database/Schema/Table", anchor=None)
 
 db_conf = st.radio("Do you want to create Database",('Yes', 'No'))
@@ -13,9 +16,9 @@ if db_conf == 'Yes':
     if st.button('submit'):
         sql_cmd = 'CREATE OR REPLACE DATABASE' + str(db_name)
         with snowflake.connector.connect(
-    user='RAJREDDY',
-    password='Raju1997@$',
-    account='VK83964.ap-southeast-1',
+    user = user,
+    password = password',
+    account ='VK83964.ap-southeast-1',
     warehouse='DNAHACK') as con:
             
             try:
