@@ -9,7 +9,7 @@ password = os.environ.get('password')
 
 st.header("Create Database/Schema/Table", anchor=None)
 
-db_conf = st.radio("Do you want to create Database",('None','Yes', 'No'))
+db_conf = st.radio("Do you want to create Database",('No','Yes'))
 
 if db_conf == 'Yes':
     db_name = st.text_input('Enter Database Name')
