@@ -14,7 +14,7 @@ db_conf = st.radio("Do you want to create Database",('No','Yes'))
 if db_conf == 'Yes':
     db_name = st.text_input('Enter Database Name')
     if st.button('submit'):
-        sql_cmd = 'CREATE OR REPLACE DATABASE' + str(db_name)
+        sql_cmd = 'CREATE OR REPLACE DATABASE ' + str(db_name) + ';'
         with snowflake.connector.connect(
     user = user,
     password = password,
