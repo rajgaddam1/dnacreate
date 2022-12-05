@@ -17,7 +17,7 @@ if db_conf == 'Yes':
         sql_cmd = 'CREATE OR REPLACE DATABASE' + str(db_name)
         with snowflake.connector.connect(
     user = user,
-    password = password',
+    password = password,
     account ='VK83964.ap-southeast-1',
     warehouse='DNAHACK') as con:
             
